@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    tools:context=".activity.LoginActivity">
+
+    <RelativeLayout
+        android:id="@+id/progressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBarLoading"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/tv_loading"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBarLoading"
+            android:gravity="center"
+            android:text="Signing in..."
+            android:textColor="@color/colorPrimaryDark" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lyt_login_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/parkovi_logo" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp">
+
+            <RelativeLayout
+                android:id="@+id/lyt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Email address"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/tv_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_email"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Password"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_toEndOf="@id/tv_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_park"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_password"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_park"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Park"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/sp_park"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_toEndOf="@id/tv_park"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/lyt_terminal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lyt_park"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="invisible">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tv_terminal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Terminal"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_toEndOf="@id/tv_terminal"
+                    android:orientation="horizontal"
+                    android:id="@+id/rg_terminal"
+                    android:textSize="14sp">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rb_terminal1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="1" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rb_terminal2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="2" />
+                </RadioGroup>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_login"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+</RelativeLayout>
